@@ -214,6 +214,49 @@ namespace CapaPresentacion.WsControls
             }
         }
 
+        [Category("WiseSeries Advance")]
+        public ComboBox.ObjectCollection Items => cmbList.Items;
+
+        [Category("WiseSeries Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public object DataSource
+        {
+            get => cmbList.DataSource;
+            set => cmbList.DataSource = value;
+        }
+
+        [Category("WiseSeries Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public object SelectedItem
+        {
+            get => cmbList.SelectedItem;
+            set => cmbList.SelectedItem = value;
+        }
+
+        [Category("WiseSeries Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public int SelectedIndex
+        {
+            get => cmbList.SelectedIndex;
+            set => cmbList.SelectedIndex = value;
+        }
+
+        [Category("WiseSeries Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string DisplayMember
+        {
+            get => cmbList.DisplayMember;
+            set => cmbList.DisplayMember = value;
+        }
+
+        [Category("WiseSeries Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string ValueMember
+        {
+            get => cmbList.ValueMember;
+            set => cmbList.ValueMember = value;
+        }
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
