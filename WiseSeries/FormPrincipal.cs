@@ -135,18 +135,15 @@ namespace WiseSeries
 
                 if (result == DialogResult.OK && formConfirmacion.CerrarSesionSeleccionado)
                 {
-                    // El usuario eligió cerrar sesión
                     CerrarSesion();
                 }
                 else if (result == DialogResult.Yes)
                 {
-                    // El usuario eligió salir
-                    Application.Exit(); // Cerrar la aplicación
+                    this.Close();
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    // El usuario eligió cancelar. Solo cerrar el formulario de confirmación y mantener el formulario anterior
-                    return; // Volver al formulario anterior sin salir de la aplicación
+                    return;
                 }
             }
         }
