@@ -92,6 +92,7 @@ namespace WiseSeries
             dgvAnimes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAnimes.Size = new Size(421, 312);
             dgvAnimes.TabIndex = 0;
+            dgvAnimes.CellClick += dgvAnimes_CellClick;
             // 
             // btnEliminar
             // 
@@ -138,11 +139,14 @@ namespace WiseSeries
             txtTemporada.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTemporada.ForeColor = Color.DimGray;
             txtTemporada.Location = new Point(476, 197);
+            txtTemporada.Multiline = false;
             txtTemporada.Name = "txtTemporada";
             txtTemporada.Padding = new Padding(7);
+            txtTemporada.PasswordChar = false;
             txtTemporada.PlaceholderText = "Temporada";
             txtTemporada.Size = new Size(204, 30);
             txtTemporada.TabIndex = 35;
+            txtTemporada.Texts = "";
             txtTemporada.UnderlinedStyle = true;
             // 
             // txtEpisodio
@@ -153,11 +157,14 @@ namespace WiseSeries
             txtEpisodio.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEpisodio.ForeColor = Color.DimGray;
             txtEpisodio.Location = new Point(476, 161);
+            txtEpisodio.Multiline = false;
             txtEpisodio.Name = "txtEpisodio";
             txtEpisodio.Padding = new Padding(7);
+            txtEpisodio.PasswordChar = false;
             txtEpisodio.PlaceholderText = "Episodio";
             txtEpisodio.Size = new Size(204, 30);
             txtEpisodio.TabIndex = 34;
+            txtEpisodio.Texts = "";
             txtEpisodio.UnderlinedStyle = true;
             // 
             // txtTitulo
@@ -168,11 +175,14 @@ namespace WiseSeries
             txtTitulo.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTitulo.ForeColor = Color.DimGray;
             txtTitulo.Location = new Point(476, 89);
+            txtTitulo.Multiline = false;
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Padding = new Padding(7);
+            txtTitulo.PasswordChar = false;
             txtTitulo.PlaceholderText = "Título";
             txtTitulo.Size = new Size(204, 30);
             txtTitulo.TabIndex = 33;
+            txtTitulo.Texts = "";
             txtTitulo.UnderlinedStyle = true;
             // 
             // btnConfirmar

@@ -150,6 +150,7 @@
             txtConfirmPasswordRegister.PlaceholderText = "Confirmar Contraseña";
             txtConfirmPasswordRegister.Size = new Size(194, 30);
             txtConfirmPasswordRegister.TabIndex = 26;
+            txtConfirmPasswordRegister.Texts = "";
             txtConfirmPasswordRegister.UnderlinedStyle = true;
             // 
             // txtNombre
@@ -165,6 +166,7 @@
             txtNombre.PlaceholderText = "Nombre";
             txtNombre.Size = new Size(194, 30);
             txtNombre.TabIndex = 23;
+            txtNombre.Texts = "";
             txtNombre.UnderlinedStyle = true;
             // 
             // txtPasswordRegister
@@ -181,6 +183,7 @@
             txtPasswordRegister.PlaceholderText = "Contraseña";
             txtPasswordRegister.Size = new Size(194, 30);
             txtPasswordRegister.TabIndex = 25;
+            txtPasswordRegister.Texts = "";
             txtPasswordRegister.UnderlinedStyle = true;
             // 
             // btnRegister
@@ -217,6 +220,7 @@
             txtEmailRegister.PlaceholderText = "Email";
             txtEmailRegister.Size = new Size(194, 30);
             txtEmailRegister.TabIndex = 24;
+            txtEmailRegister.Texts = "";
             txtEmailRegister.UnderlinedStyle = true;
             // 
             // lblRegister
@@ -243,6 +247,7 @@
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(204, 30);
             txtEmail.TabIndex = 15;
+            txtEmail.Texts = "";
             txtEmail.UnderlinedStyle = true;
             // 
             // txtPassword
@@ -259,6 +264,7 @@
             txtPassword.PlaceholderText = "Contraseña";
             txtPassword.Size = new Size(204, 30);
             txtPassword.TabIndex = 16;
+            txtPassword.Texts = "";
             txtPassword.UnderlinedStyle = true;
             // 
             // pictureBox1

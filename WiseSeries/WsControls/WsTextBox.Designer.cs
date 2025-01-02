@@ -39,6 +39,12 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(236, 17);
             textBox1.TabIndex = 0;
+            textBox1.Click += textBox1_Click;
+            textBox1.Enter += textBox1_Enter;
+            textBox1.KeyPress += textBox1_KeyPress;
+            textBox1.Leave += textBox1_Leave;
+            textBox1.MouseEnter += textBox1_MouseEnter;
+            textBox1.MouseLeave += textBox1_MouseLeave;
             // 
             // WsTextBox
             // 

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CapaPresentacion.WsControls
 {
@@ -23,11 +19,13 @@ namespace CapaPresentacion.WsControls
         private bool isPlaceholderActive = true;
         private bool isPasswordChar = false;
 
+        // Constructor
         public WsTextBox()
         {
             InitializeComponent();
             textBox1.Text = placeholderText;
             textBox1.ForeColor = Color.Gray;
+            textBox1.UseSystemPasswordChar = false;
             isPlaceholderActive = true;
         }
 
@@ -35,7 +33,9 @@ namespace CapaPresentacion.WsControls
         public event EventHandler _TextChanged;
 
         // Properties
-        [Category("Ws Custom Properties"), DefaultValue(typeof(Color), "MediumSeaGreen"), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
+        [DefaultValue(typeof(Color), "MediumSeaGreen")] // Valor por defecto para el diseñador
         public Color BorderColor
         {
             get => borderColor;
@@ -46,7 +46,9 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        [Category("Ws Custom Properties"), DefaultValue(2), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
+        [DefaultValue(2)] // Valor por defecto para el diseñador
         public int BorderSize
         {
             get => borderSize;
@@ -57,7 +59,8 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        [Category("Ws Custom Properties"), DefaultValue(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
         public bool UnderlinedStyle
         {
             get => underlinedStyle;
@@ -68,7 +71,8 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        [Category("Ws Custom Properties"), DefaultValue(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
         public bool PasswordChar
         {
             get => isPasswordChar;
@@ -82,31 +86,16 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        [Category("Ws Custom Properties"), DefaultValue("Placeholder"), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        public string PlaceholderText
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
+        public bool Multiline
         {
-            get => placeholderText;
-            set
-            {
-                placeholderText = value;
-                if (isPlaceholderActive)
-                {
-                    textBox1.Text = placeholderText;
-                }
-                Invalidate();
-            }
+            get { return textBox1.Multiline; }
+            set { textBox1.Multiline = value; }
         }
 
-        [Category("Ws Custom Properties"), DefaultValue(typeof(Color), "HotPink"), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        public Color BorderFocusColor
-        {
-            get => borderFocusColor;
-            set => borderFocusColor = value;
-        }
-
-        [Category("Ws Custom Properties")]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        [DefaultValue(typeof(Color), "White")]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
         public override Color BackColor
         {
             get { return base.BackColor; }
@@ -117,13 +106,8 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        private bool ShouldSerializeBackColor() => BackColor != Color.White;
-        private void ResetBackColor() => BackColor = Color.White;
-
-
-        [Category("Ws Custom Properties")]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        [DefaultValue(typeof(Color), "Black")]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
         public override Color ForeColor
         {
             get { return base.ForeColor; }
@@ -134,16 +118,14 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        private bool ShouldSerializeForeColor() => ForeColor != Color.Black;
-        private void ResetForeColor() => ForeColor = Color.Black;
-
-
-        [Category("Ws Custom Properties")]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        [DefaultValue(typeof(Font), "Microsoft Sans Serif, 8.25pt")]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
         public override Font Font
         {
-            get => base.Font;
+            get
+            {
+                return base.Font;
+            }
             set
             {
                 base.Font = value;
@@ -155,10 +137,9 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        private bool ShouldSerializeFont() => Font != new Font("Microsoft Sans Serif", 8.25f);
-        private void ResetFont() => Font = new Font("Microsoft Sans Serif", 8.25f);
-
-        [Category("Ws Custom Properties"), DefaultValue("")]
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
+        [DefaultValue("Placeholder")] // Valor por defecto para el placeholder
         public string Texts
         {
             get => isPlaceholderActive ? string.Empty : textBox1.Text;
@@ -178,6 +159,31 @@ namespace CapaPresentacion.WsControls
                     textBox1.ForeColor = this.ForeColor;
                     textBox1.UseSystemPasswordChar = isPasswordChar;
                 }
+            }
+        }
+
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
+        public Color BorderFocusColor
+        {
+            get => borderFocusColor;
+            set => borderFocusColor = value;
+        }
+
+        [Category("Wise Code Advance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // Asegura la serialización
+        [DefaultValue("Placeholder")] // Valor por defecto para el placeholder
+        public string PlaceholderText
+        {
+            get => placeholderText;
+            set
+            {
+                placeholderText = value;
+                if (isPlaceholderActive)
+                {
+                    textBox1.Text = placeholderText;
+                }
+                Invalidate();
             }
         }
 
@@ -248,7 +254,6 @@ namespace CapaPresentacion.WsControls
             }
         }
 
-        // TextBox event handlers...
         private void textBox1_Click(object sender, EventArgs e)
         {
             this.OnClick(e);
