@@ -1,1 +1,1 @@
-# WiseSeries
+Wise Series es una aplicación de escritorio diseñada para que los usuarios puedan almacenar y hacer seguimiento de sus series y películas favoritas 🎬. Utilizamos Supabase para gestionar los datos de manera segura y eficiente, y ofrecemos la opción de iniciar sesión fácilmente con Google ☁️. Además, los usuarios pueden crear una cuenta directamente en la aplicación si lo prefieren ✨.
