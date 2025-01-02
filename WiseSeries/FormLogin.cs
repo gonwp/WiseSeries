@@ -126,12 +126,13 @@ namespace CapaPresentacion
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
+            string nombre = txtNombre.Texts;
             string email = txtEmailRegister.Texts;
             string password = txtPasswordRegister.Texts;
             string confirmPassword = txtConfirmPasswordRegister.Texts;
 
             // Validar campos vacíos
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
                 MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -147,11 +148,15 @@ namespace CapaPresentacion
             try
             {
                 // Intentar registrar al usuario con la contraseña
-                if (_usuarioBL.RegistrarUsuario(email, password, "NombrePorDefecto"))  // Puedes agregar un campo para el nombre si es necesario
+                if (_usuarioBL.RegistrarUsuario(email, password, nombre))  // Puedes agregar un campo para el nombre si es necesario
                 {
-                    MessageBox.Show("Usuario registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    MessageBox.Show("Usuario registrado exitosamente. Ahora puede iniciar sesión.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Opcional: Limpiar los campos después del registro
+                    txtNombre.Texts = string.Empty;
+                    txtEmailRegister.Texts = string.Empty;
+                    txtPasswordRegister.Texts = string.Empty;
+                    txtConfirmPasswordRegister.Texts = string.Empty;
                 }
                 else
                 {
@@ -175,10 +180,10 @@ namespace CapaPresentacion
                 };
 
                 var scopes = new[] {
-            "https://www.googleapis.com/auth/userinfo.email",
-            "https://www.googleapis.com/auth/userinfo.profile",
-            "openid"
-        };
+                    "https://www.googleapis.com/auth/userinfo.email",
+                    "https://www.googleapis.com/auth/userinfo.profile",
+                    "openid"
+                };
 
                 // Usar una ubicación personalizada para el almacenamiento de datos
                 string dataStorePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WiseSeries", "GoogleAuth");
