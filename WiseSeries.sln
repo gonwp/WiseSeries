@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\Capa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocios", "CapaNegocios\CapaNegocios.csproj", "{5FEF5B14-DE5E-4220-AD08-2D897C1EC65A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WiseSeriesSetup", "WiseSeriesSetup\WiseSeriesSetup.vdproj", "{297403C3-8BE3-4077-8D52-B35A88F0C6D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{5FEF5B14-DE5E-4220-AD08-2D897C1EC65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FEF5B14-DE5E-4220-AD08-2D897C1EC65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FEF5B14-DE5E-4220-AD08-2D897C1EC65A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{297403C3-8BE3-4077-8D52-B35A88F0C6D9}.Debug|Any CPU.ActiveCfg = Debug
+		{297403C3-8BE3-4077-8D52-B35A88F0C6D9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
